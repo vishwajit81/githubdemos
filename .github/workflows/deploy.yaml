@@ -14,4 +14,4 @@ jobs:
     steps: 
       - name: Deploy
         run: |
-          echo "Deploying the commit ${GITHUB_SHA:0:8} to environment ${github.event.inputs.environment}"
+          echo "Deploying the commit ${GITHUB_SHA:0:8} to development environment"
