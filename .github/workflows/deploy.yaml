@@ -14,7 +14,7 @@ jobs:
     environment: ${{ github.event.inputs.environment }}
     env:
       ROLE: ${{ vars.ROLE }}
-      ECR_REPO: ${{ env.ECR_REPO }}
+      ECR_REPO: ${{ ECR_REPO }}
 
     steps: 
       - name: Deploy
