@@ -15,6 +15,7 @@ jobs:
     env:
       ROLE: ${{ vars.ROLE }}
       ECR_REPO: ${{ vars.ECR_REPO }}
+      tag: ${{ github.sh::8}}
 
     steps: 
       - name: Deploy
@@ -22,3 +23,5 @@ jobs:
           echo "Deploying the commit ${GITHUB_SHA:0:8} to development environment"
           echo "ROLE ARN: $ROLE"
           echo "Repo: $ECR_REPO"
+          echo "tag: $tag"
+
