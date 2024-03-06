@@ -14,11 +14,11 @@ jobs:
     environment: ${{ github.event.inputs.environment }}
     env:
       ROLE: ${{ vars.ROLE }}
-      ECR_REPO: ${{ ECR_REPO }}
+      ECR_REPO: ${{ vars.ECR_REPO }}
 
     steps: 
       - name: Deploy
         run: |
           echo "Deploying the commit ${GITHUB_SHA:0:8} to development environment"
           echo "ROLE ARN: $ROLE"
-          echo "Repo: ${ECR_REPO}"
+          echo "Repo: $ECR_REPO"
