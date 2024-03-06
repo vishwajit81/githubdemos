@@ -23,6 +23,9 @@ jobs:
           echo "ROLE ARN: $ROLE"
           echo "Repo: $ECR_REPO"
           echo "tag=${GITHUB_SHA:0:7}" >> $GITHUB_ENV
-          echo "tag=${{ env.tag }}" 
+      - name: Display tag 
+        run: echo "tag=${{ env.tag }}"
+
+
           
       
