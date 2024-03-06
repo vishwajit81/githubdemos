@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-      description: "Target deployment environment"
-      type: environment
+        description: "Target deployment environment"
+        type: environment
 
 jobs:
   build:
