@@ -15,15 +15,13 @@ jobs:
     env:
       ROLE: ${{ vars.ROLE }}
       ECR_REPO: ${{ vars.ECR_REPO }}
-      tag: ${{ github.sha }}
       
-
     steps: 
       - name: Deploy
         run: |
           echo "Deploying the commit ${GITHUB_SHA:0:8} to development environment"
           echo "ROLE ARN: $ROLE"
           echo "Repo: $ECR_REPO"
-          tag=${GITHUB_SHA:0:7}
+          echo "tag=${GITHUB_SHA:0:7}" >> $GITHUB_ENV
           echo "tag = ${{ env.tag }}"
 
