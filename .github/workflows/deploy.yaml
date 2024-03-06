@@ -1,0 +1,17 @@
+name: Deploy Pipeline 
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+      description: "Target deployment environment"
+      type: environment
+
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Deploy
+        run: |
+          echo "Deploying the commit ${GITHUB_SHA:0:8} to environment ${github.event.inputs.environment}"

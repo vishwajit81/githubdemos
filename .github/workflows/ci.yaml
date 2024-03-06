@@ -1,0 +1,22 @@
+name: Build Pipeline 
+
+on:
+  pull_request:
+    types:
+      - opened 
+      - edited
+    branches:
+      - dev
+      - main
+      - qa
+
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: image build 
+        run: echo "building the commit ${GITHUB_SHA::8}"
