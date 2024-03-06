@@ -22,7 +22,7 @@ jobs:
           echo "Deploying the commit ${GITHUB_SHA:0:7} to development environment"
           echo "ROLE ARN: $ROLE"
           echo "Repo: $ECR_REPO"
-          echo "tag=$(echo ${GITHUB_SHA:0:7})" >> GITHUB_ENV
+          echo "tag=${GITHUB_SHA:0:7}" >> $GITHUB_ENV
           
       - name: display tag 
         run: echo "${{ env.tag }}"   
