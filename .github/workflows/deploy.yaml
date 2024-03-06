@@ -11,8 +11,9 @@ jobs:
   Deploy:
     
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
     steps: 
       - name: Deploy
         run: |
           echo "Deploying the commit ${GITHUB_SHA:0:8} to development environment"
-          echo "ROLE ARN: ${ROLE}"
+          echo "ROLE ARN: $ROLE"
