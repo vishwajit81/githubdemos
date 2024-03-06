@@ -15,7 +15,7 @@ jobs:
     env:
       ROLE: ${{ vars.ROLE }}
       ECR_REPO: ${{ vars.ECR_REPO }}
-      tag: ${{ github.sha }}
+      tag: ${{ github.sha:0:8 }}
 
     steps: 
       - name: Deploy
