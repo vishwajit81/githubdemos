@@ -9,6 +9,9 @@ on:
       - dev
       - main
       - qa
+  push:
+    branches:
+      - dev
 
 jobs:
   build:
@@ -17,6 +20,7 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v3
+        run: ls -l
 
       - name: image build 
         run: echo "building the commit ${GITHUB_SHA::8}"
