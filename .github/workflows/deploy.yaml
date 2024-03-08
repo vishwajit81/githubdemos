@@ -1,31 +1,10 @@
-name: Deploy Pipeline 
+name: Deploy
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: "Target deployment environment"
-        type: environment
 
 jobs:
-  Deploy:
-    
+  deploy:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment }}
-    env:
-      ROLE: ${{ vars.ROLE }}
-      ECR_REPO: ${{ vars.ECR_REPO }}
-      
-    steps: 
-      - name: Deploy
-        run: |
-          echo "Deploying the commit ${GITHUB_SHA:0:7} to development environment"
-          echo "ROLE ARN: $ROLE"
-          echo "Repo: $ECR_REPO"
-          echo "tag=${GITHUB_SHA:0:7}" >> $GITHUB_ENV
-      - name: Display tag 
-        run: echo "tag=${{ env.tag }}"
-
-
-          
-      
+    steps:
+      - run: true
