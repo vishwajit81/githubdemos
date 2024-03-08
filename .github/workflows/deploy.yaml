@@ -1,10 +1,16 @@
 name: Deploy
+run-name: Deploy ${{ github.ref_name }} to ${{ inputs.environment }}
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target deployment environment"
+        type: environment 
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
     steps:
-      - run: true
+      - run: echo "deploying the atrifacts"
